@@ -1,6 +1,7 @@
 """Jamf MCP Server — Claude Desktop MCP server for Jamf Pro, Protect, and Security Cloud."""
 from mcp.server.fastmcp import FastMCP
 
+from jamf_mcp import __version__
 from jamf_mcp.tools import setup
 from jamf_mcp.tools.pro import api_mgmt, apps, computers, groups, mobile_devices, org, policies, printers, scripts, users
 from jamf_mcp.tools.protect import alerts, computers as protect_computers
@@ -17,6 +18,11 @@ mcp = FastMCP(
         "ask for clarification before calling any tool."
     ),
 )
+
+# Report the package version (__version__) in the MCP serverInfo. FastMCP does
+# not expose a version parameter, so without this the low-level server falls
+# back to the installed mcp SDK version.
+mcp._mcp_server.version = __version__
 
 # Register all tool modules
 setup.register(mcp)
