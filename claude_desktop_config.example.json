@@ -1,0 +1,24 @@
+{
+  "mcpServers": {
+    "jamf": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--directory",
+        "/path/to/jamf-mcp",
+        "jamf-mcp"
+      ],
+      "env": {
+        "JAMF_PRO_URL": "https://yourorg.jamfcloud.com",
+        "JAMF_CLIENT_ID": "your-client-id",
+        "JAMF_CLIENT_SECRET": "your-client-secret",
+        "JAMF_PROTECT_URL": "https://yourorg.protect.jamfcloud.com",
+        "JAMF_PROTECT_CLIENT_ID": "your-protect-client-id",
+        "JAMF_PROTECT_PASSWORD": "your-protect-client-secret",
+        "JAMF_SECURITY_CLIENT_ID": "your-security-client-id",
+        "JAMF_SECURITY_CLIENT_SECRET": "your-security-client-secret",
+        "JAMF_SECURITY_REGION": "us"
+      }
+    }
+  }
+}
